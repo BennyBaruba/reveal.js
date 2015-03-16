@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Developing Web Apps with the ArcGIS API for Javascript</title>
+
+    <meta name="description"
+          content="Supporting material for the Developing Web Apps with the ArcGIS API for Javascript course">
+    <meta name="author" content="Ben Ramseth">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section data-background="assets/IMG_20150307_145327108.jpg">
+            <h1>Lesson XXX</h1>
+
+            <h3>We will talk about XXX</h3>
+
+            <p>
+                <small>Presented by <a href="mailto:bramseth@esri.com">Ben Ramseth</a> / <a
+                        href="http://twitter.com/esriMapNinja">@esriMapNinja</a></small>
+            </p>
+            <image src="assests/20140211_125545.jpg"></image>
+        </section>
+        <section>
+            <h2>Topics Covered in this Lesson</h2>
+            <ul>
+                <li>No order here</li>
+                <li>Or here</li>
+                <li>Or here</li>
+                <li>Or here</li>
+            </ul>
+        </section>
+
+        <section id="general">
+            <h2>Hello There</h2>
+
+            <p>
+                reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will
+                show you examples of what it can do.
+            </p>
+        </section>
+
+        <section id="arcgisDeveloperWebsite">
+
+            <iframe id="slideshare" src="http://developers.arcgis.com" height="650px" width="1000px"></iframe>
+
+        </section>
+
+        <section id="samples">
+            <h4>SDK Sample: <a href="https://developers.arcgis.com/javascript/jssamples/map_simple.html">Create a Map</a></h4>
+
+
+            <iframe id="sdkSample" src="http://developers.arcgis.com/javascript/sandbox/sandbox.html?sample=map_simple" height="600px" width="1000px"></iframe>
+
+        </section>
+
+        <section id="instructorSample">
+
+            <h2>Instructor Demo: </h2>
+            <p><a href="https://developers.arcgis.com/javascript/jssamples/map_simple.html">xxx Functionality</a></p>
+
+        </section>
+
+        <section>
+            <h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+                        function linkify( selector ) {
+                        if( supports3DTransforms ) {
+
+                        var nodes = document.querySelectorAll( selector );
+
+                        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+                        var node = nodes[i];
+
+                        if( !node.className ) {
+                        node.className += ' roll';
+                        }
+                        }
+                        }
+                        }
+                    </code></pre>
+
+        </section>
+
+        <section id="exerciseXX">
+            <h2>Exercise xx: xxx</h2>
+
+            <p>
+                Live exercise <a href="http://codepen.io/NebHtesmar/pen/KwBder">starter</a> and <a href="http://codepen.io/NebHtesmar/pen/MYbaKa">solution</a> on CodePen
+            </p>
+
+            <iframe id="codePen" src="http://s.codepen.io/NebHtesmar/debug/MYbaKa?" height="500px" width="1000px"></iframe>
+
+        </section>
+
+        <section>
+            <section id="bootCampStyleActivity" fragments>
+                <h2>Collabertive Coding Activity: </h2>
+
+            </section>
+            <section>
+                <h2>Task 1</h2>
+
+                <p class="fragment roll-in" style="color: #0000f1   ">Steps</p>
+            </section>
+            <section>
+                <h2>Task 2</h2>
+
+                <p class="fragment roll-in" style="color: #0000f1">Steps</p>
+            </section>
+            <section>
+                <h2>Task 3</h2>
+
+                <p class="fragment roll-in" style="color: #0000f1">Steps</p>
+            </section>
+        </section>
+
+
+
+        <section>
+            <section id="reviewQuestions" fragments>
+                <h2>Review Questions</h2>
+
+            </section>
+            <section>
+                <h2>Question XXX</h2>
+
+                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+            </section>
+            <section>
+                <h2>Question XXX</h2>
+
+                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+            </section>
+            <section>
+                <h2>Question XXX</h2>
+
+                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+            </section>
+        </section>
+
+
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>

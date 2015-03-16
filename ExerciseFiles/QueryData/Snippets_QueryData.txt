@@ -1,0 +1,106 @@
+// ---------------------------------------------------
+// Code Snippets for Exercise: Query Data
+// ---------------------------------------------------
+
+
+    /*
+     * Step: Wire the draw tool initialization function
+     */
+    mapMain.on("load", initDrawTool);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Implement the Draw toolbar
+       */
+      var tbDraw = new Draw(mapMain);
+      tbDraw.on("draw-end", displayPolygon);
+      tbDraw.activate(Draw.POLYGON);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Construct and add the polygon graphic
+       */
+      var graphicPolygon = new Graphic(geometryInput, tbDrawSymbol);
+      mapMain.graphics.add(graphicPolygon);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Initialize the query
+       */
+      var queryQuakes = new Query();
+      queryQuakes.geometry = geometryInput;
+      
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Wire the layer's selection complete event
+       */
+      lyrQuakes.on("selection-complete", populateGrid);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Perform the selection
+       */
+      lyrQuakes.selectFeatures(queryQuakes, FeatureLayer.SELECTION_NEW);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Set the selection symbol
+       */
+      lyrQuakes.setSelectionSymbol(symbolSelected);
+
+
+// ---------------------------------------------------
+
+    /*
+     * Step: Specify the output fields
+     */
+    var outFieldsQuakes = ["eqid", "datetime", "magnitude", "longitude", "latitude"];
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Set the quakes layer output fields
+       */
+      outFields : outFieldsQuakes
+
+
+// ---------------------------------------------------
+
+      /* *********************************************
+       * Required Snippet for the JSON object template
+       * *********************************************/
+          "eqid" : 
+          "datetime" : 
+          "magnitude" : 
+          "longitude" : 
+          "latitude" : 
+
+
+// ---------------------------------------------------
+
+          /*
+           * Step: Reference the attribute field values
+           */
+          "eqid" : feature.attributes[outFieldsQuakes[0]],
+          "datetime" : feature.attributes[outFieldsQuakes[1]],
+          "magnitude" : feature.attributes[outFieldsQuakes[2]],
+          "longitude" : feature.attributes[outFieldsQuakes[3]],
+          "latitude" : feature.attributes[outFieldsQuakes[4]]
+
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+

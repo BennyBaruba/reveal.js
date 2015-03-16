@@ -1,0 +1,44 @@
+// ---------------------------------------------------
+// Code Snippets for Exercise:  Create Popup
+// ---------------------------------------------------
+
+
+// ---------------------------------------------------
+
+
+    /*
+     * Step: Complete  the  popup template 
+     */
+    
+     var ptQuakes = new PopupTemplate({
+          "title": "Quake magnitude:  {magnitude}",
+          "fieldInfos": [{
+              "fieldName": "latitude",
+               "format": {
+                  "places": 2,
+                  "digitSeparator": true
+              }
+          }, {
+              "fieldName": "longitude",
+               "format": {
+                  "places": 2,
+                  "digitSeparator": true
+              }
+         }],
+          "description": "Current location: {latitude}, {longitude}"
+         });
+
+
+// ---------------------------------------------------
+
+     
+    /*
+     * Step: Assign  the  popup template
+     */
+
+    infoTemplate : ptQuakes
+
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
