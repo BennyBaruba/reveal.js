@@ -43,110 +43,232 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section data-background="assets/IMG_20150307_145327108.jpg">
-            <h1>Lesson XXX</h1>
+            <h1>Lesson 2</h1>
 
-            <h3>We will talk about XXX</h3>
+            <h3>Working with the map</h3>
 
             <p>
                 <small>Presented by <a href="mailto:bramseth@esri.com">Ben Ramseth</a> / <a
                         href="http://twitter.com/esriMapNinja">@esriMapNinja</a></small>
             </p>
-            <image src="assests/20140211_125545.jpg"></image>
+            <img height="200" width="160" data-src="assets/HeadShotBenRamseth.jpg" >
         </section>
         <section>
             <h2>Topics Covered in this Lesson</h2>
             <ul>
-                <li>No order here</li>
-                <li>Or here</li>
-                <li>Or here</li>
-                <li>Or here</li>
+                <li>Map layers</li>
+                <li>Using web maps</li>
+                <li>Widgets</li>
+                <li>Map events</li>
             </ul>
         </section>
 
         <section id="general">
-            <h2>Hello There</h2>
-
-            <p>
-                reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will
-                show you examples of what it can do.
-            </p>
+            <h2>What data do you plan to add to the map?</h2>
         </section>
 
-        <section id="arcgisDeveloperWebsite">
+        <section id="addDataToMap">
+            <h2>Map Services vs. Webmap</h2>
+            <h6>Workbook pages 2-2 to 2-3</h6>
+        </section>
 
-            <iframe id="slideshare" src="http://developers.arcgis.com" height="650px" width="1000px"></iframe>
+
+
+
+        <section id="addLayersToMap" >
+            <section fragments>
+                <h2>Layer Type</h2>
+                <img height="500" width="1000" data-src="assets/layers2.png" >
+                <h6>Workbook pages 2-4 to 2-5</h6>
+
+            </section>
+            <section>
+                <h2>Tiled Layer</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/layers_ags_tiled/" height="600px" width="1000px"></iframe>
+            </section>
+            <section>
+                <h2>Dynamic Layer</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/map_dynamic/" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Feature Layer</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/fl_ondemand/" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Graphics Layer</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/graphics_add/" height="600px" width="1000px"></iframe>
+
+            </section>
+        </section>
+
+
+
+        <section id="mapLayerOrder">
+            <h2>What order do the layers draw in the map?</h2>
+
+            <h6>Workbook pages 2-6 to 2-7</h6>
 
         </section>
 
-        <section id="samples">
-            <h4>SDK Sample: <a href="https://developers.arcgis.com/javascript/jssamples/map_simple.html">Create a Map</a></h4>
+        <section id="spatialReference">
+            <h2>Does the spatial reference matter?</h2>
 
-
-            <iframe id="sdkSample" src="http://developers.arcgis.com/javascript/sandbox/sandbox.html?sample=map_simple" height="600px" width="1000px"></iframe>
-
-        </section>
-
-        <section id="instructorSample">
-
-            <h2>Instructor Demo: </h2>
-            <p><a href="https://developers.arcgis.com/javascript/jssamples/map_simple.html">xxx Functionality</a></p>
+            <h6>Workbook pages 2-8 to 2-9</h6>
 
         </section>
 
-        <section>
-            <h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-                        function linkify( selector ) {
-                        if( supports3DTransforms ) {
+        <section id="addLayersProgrammatically" >
+            <section fragments>
+                <h3>Adding Layers Programmatically </h3>
 
-                        var nodes = document.querySelectorAll( selector );
+                <h6>Workbook pages 2-10 to 2-13</h6>
 
-                        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-                        var node = nodes[i];
+            </section>
+            <section>
+                <h2>Discover the service details</h2>
+                <iframe src="http://services.arcgis.com/vq6gDtLASJCfTxvY/ArcGIS/rest/services" height="600px" width="1000px"></iframe>
 
-                        if( !node.className ) {
-                        node.className += ' roll';
-                        }
-                        }
-                        }
-                        }
+            </section>
+            <section>
+                <h2>Determine the appropriate layer type</h2>
+                <iframe src="https://developers.arcgis.com/javascript/jsapi/arcgistiledmapservicelayer-amd.html" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Load the module</h2>
+                <iframe src="https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step3" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Construct the instance</h2>
+
+                	<pre><code data-trim contenteditable>
+                        var census = new ArcGISDynamicMapServiceLayer(layerUrl, {
+                        "showAttribution": false,
+                        "opacity": 0.5
+                        });
                     </code></pre>
 
+
+            </section>
+
+            <section>
+                <h2>Add the layer to the map</h2>
+                	<pre><code data-trim contenteditable>
+                        map.addLayer(dynamicMapServiceLayer);
+                    </code></pre>
+
+            </section>
         </section>
 
-        <section id="exerciseXX">
-            <h2>Exercise xx: xxx</h2>
+        <section id="instructorDemo" data-background-image="assets/canoePaddles.jpg">
+
+            <h2>Instructor Demo</h2>
+            <h3>Adding Layers</h3>
+            <ul>
+                <li>ArcGISTiledMapServiceLayer</li>
+                <a target="_blank" href="http://services.arcgis.com/vq6gDtLASJCfTxvY/ArcGIS/rest/services/Bwca/FeatureServer">Rest End Point</a>
+                <li>ArcGISDynamicMapServiceLayer</li>
+                <a target="_blank" href="http://services.arcgis.com/vq6gDtLASJCfTxvY/ArcGIS/rest/services/Bwca/FeatureServer">Rest End Point</a>
+                <li>FeatureLayer</li>
+                <a target="_blank" href="http://services.arcgis.com/vq6gDtLASJCfTxvY/ArcGIS/rest/services/Bwca/FeatureServer">Rest End Point</a>
+
+
+            </ul>
+
+        </section>
+
+        <section id="wigdits" >
+            <section fragments>
+                <h2>Map Widgits</h2>
+
+                <h6>Workbook pages 2-14 to 2-15</h6>
+
+            </section>
+            <section>
+                <h2>Basemap Gallery</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/widget_basemap/" height="600px" width="1000px"></iframe>
+            </section>
+            <section>
+                <h2>Overview Map</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/widget_overviewmap/" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Scalebar</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/widget_scalebar/" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Legend</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/widget_legend/" height="600px" width="1000px"></iframe>
+
+            </section>
+            <section>
+                <h2>Basemap Toggle</h2>
+                <iframe src="http://developers.arcgis.com/javascript/samples/widget_toggle/" height="600px" width="1000px"></iframe>
+
+            </section>
+
+        </section>
+
+        <section id="widgetCode">
+            <h2>Code for Widgets</h2>
+            	<pre><code data-trim contenteditable>
+                    var map;
+                    require([
+                    "esri/map",
+                    "esri/dijit/BasemapToggle",
+                    "dojo/domReady!"
+                    ], function(
+                    Map, BasemapToggle
+                    )  {
+
+                    map = new Map("map", {center: [-70.6508, 43.1452], zoom: 16,
+                    basemap: "topo"
+                    });
+
+                    var toggle = new BasemapToggle({map: map,
+                    basemap: "satellite"}, "BasemapToggle");
+                    toggle.startup();
+
+                    });
+
+                    <!--<div id="map" class="map">-->
+                    <!--<div id="BasemapToggle"></div>-->
+
+                </code></pre>
+
+        </section>
+
+
+
+
+
+        <section id="exercise2A">
+            <h3>Exercise 2A: Working with map layers</h3>
 
             <p>
-                Live exercise <a href="http://codepen.io/NebHtesmar/pen/KwBder">starter</a> and <a href="http://codepen.io/NebHtesmar/pen/MYbaKa">solution</a> on CodePen
+                Live exercise <a target="_blank" href="http://codepen.io/NebHtesmar/pen/KwBder">starter</a> and <a target="_blank"  href="http://codepen.io/NebHtesmar/pen/MYbaKa">solution</a> on CodePen
             </p>
 
             <iframe id="codePen" src="http://s.codepen.io/NebHtesmar/debug/MYbaKa?" height="500px" width="1000px"></iframe>
-
+            <h6>Workbook pages 2-19 to 2-32</h6>
         </section>
 
-        <section>
-            <section id="bootCampStyleActivity" fragments>
-                <h2>Collabertive Coding Activity: </h2>
 
-            </section>
-            <section>
-                <h2>Task 1</h2>
+        <section id="exercise2B">
+            <h3>Exercise 2B: Work With Map Layers</h3>
 
-                <p class="fragment roll-in" style="color: #0000f1   ">Steps</p>
-            </section>
-            <section>
-                <h2>Task 2</h2>
+            <p>
+                Live exercise <a target="_blank" href="http://codepen.io/NebHtesmar/pen/pvZjZq">starter</a> and <a target="_blank" href="http://codepen.io/NebHtesmar/pen/XJNmdj">solution</a> on CodePen
+            </p>
 
-                <p class="fragment roll-in" style="color: #0000f1">Steps</p>
-            </section>
-            <section>
-                <h2>Task 3</h2>
-
-                <p class="fragment roll-in" style="color: #0000f1">Steps</p>
-            </section>
+            <iframe id="codePen" src="http://s.codepen.io/NebHtesmar/debug/XJNmdj?" height="500px" width="1000px"></iframe>
+            <h6>Workbook pages 2-39 to 2-45</h6>
         </section>
-
 
 
         <section>
@@ -155,21 +277,37 @@
 
             </section>
             <section>
-                <h2>Question XXX</h2>
+                <h2>Explain the benefits of using a web map in your application.</h2>
 
-                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+                <p class="fragment roll-in" style="color: #17ff2e">It is often easier to build and maintain maps using a portal such as ArcGIS Online than
+                    to build maps programmatically. The application's code will be smaller and require less maintenance.</p>
             </section>
             <section>
-                <h2>Question XXX</h2>
+                <h2>Describe the steps you would take when using a web map to do the following:</h2>
 
-                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+                <p class="fragment roll-in" style="color: #17ff2e"> • Add a web map layer to the Legend widget
+                    • Add an extra layer to the Map (not currently in the web map)
+
+                    Add a web map layer to the Legend widget:
+
+                    • Rehydrate a map using a web map ID
+                    • Call the getLegendLayers() method of  arcgisUtils, passing in the deferred response.
+                    • Assign the layer information to the layerinfos array of the Legend widget. Add an extra layer to the map:
+                    Rehydrate a map using a web map ID
+
+                    • Reference the map using the deferred response.
+                    • Create a Layer using the appropriate layer type.
+                    • Use the addLayer() method on the map to add the new layer to the Map.</p>
             </section>
             <section>
-                <h2>Question XXX</h2>
+                <h2>When writing an application, you want to code against the Map's dbl-click event. What
+                    other Map event indicates that it is safe to wire the Map's dbl-click event?</h2>
 
-                <p class="fragment roll-in" style="color: #17ff2e">Answer</p>
+                <p class="fragment roll-in" style="color: #17ff2e">a. load</p>
             </section>
         </section>
+
+
 
 
     </div>
